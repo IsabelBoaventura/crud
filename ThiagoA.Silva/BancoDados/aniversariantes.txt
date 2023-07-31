@@ -1,0 +1,22 @@
+use base_de_dados;
+
+INSERT  INTO base_de_dados.registros ( name, email, birth, phone, cpf, address ) 
+VALUES
+	( 'FREELINE INFORMATICA ', 'email@teste', '1991-06-10', '47991912830', '000.000.000-00' , 'rua de teste '),
+	( 'DENISE ALVES MOLON', 'email@teste', '2023-06-22', '47991912830', '000.000.000-00', 'rua de teste '),
+	( 'Aline Cardoso Barros', 'email@teste', '2023-06-29', '47991912830', '000.000.000-00', 'rua de teste '),
+	( 'Isabel Boaventura', 'email@teste', '1981-08-31', '47991912830', '000.000.000-00', 'rua de teste '),
+	( 'Ana Beatriz Azevedo', 'email@teste', '2023-08-31', '47991912830', '000.000.000-00', 'rua de teste '),	
+	( 'Aldenir Barbosa da Silva', 'email@teste', '2023-07-13', '47991912830', '000.000.000-00', 'rua de teste '),
+	( 'Maurício Moller', 'email@teste', '1981-03-14', '47991912830', '000.000.000-00', 'rua de teste '),
+	( 'Carlos Uchoa', 'email@teste', '2023-03-31', '47991912830', '000.000.000-00', 'rua de teste '),
+	( 'Sra. Rosane', 'email@teste', '2023-04-18', '47992027963', '000.000.000-00', 'rua de teste '),	
+	( 'Thaiane Pahl', 'email@teste', '2023-04-27', '47992027963', '000.000.000-00', 'rua de teste ' ),	
+	( 'Willian Kruger' , 'email@teste', '2023-05-21', '47992027963', '000.000.000-00', 'rua de teste ' ),	
+	( 'Fernando Azevedo' , 'email@teste', '2023-05-27', '47992027963', '000.000.000-00', 'rua de teste ' ),	
+	( 'Gustavo Alvise' , 'email@teste', '2023-06-02', '47992027963', '000.000.000-00', 'rua de teste ' ),	
+	( 'Dona Sandra' , 'email@teste', '2023-03-09', '47992027963', '000.000.000-00', 'rua de teste ' ),	
+	( 'Ingrid' , 'email@teste', '2023-10-11', '47992027963', '000.000.000-00', 'rua de teste ' ),	
+	( 'Jéssica Bett' , 'email@teste', '2023-10-13', '47992027963', '000.000.000-00', 'rua de teste ' ),	
+	( 'Marcel' , 'email@teste', '2023-12-17', '47992027963', '000.000.000-00', 'rua de teste ' );
+
