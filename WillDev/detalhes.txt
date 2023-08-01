@@ -1,0 +1,153 @@
+
+
+Seguindo o video de Wdev
+
+	https://www.youtube.com/watch?v=uG64BgrlX7o&t=3s
+
+CRUD com PHP orientado a objetos, PDO e MySQL
+
+Criando o banco de dados;
+Criando a tabela Vaga;
+Campos: id int Primary key auto_increment,
+titulo varchar(255),
+descricao text,
+ativo ENUM ('S','N'),
+data timestamp();
+ -----------------------------------
+CREATE TABLE vagas_wdev(
+	id int(11) primary key auto_increment,
+	titulo varchar(50),
+	descricao text,
+	ativo ENUM ('S','N'),
+	data timestamp
+);
+
+-------------------------------------
+
+
+Campo 'ativo' recebe tipo Enum , onde se pode definir quais as informações o campo pode receber;
+
+Criar as pastas: app, includes;
+Criar arquivos: index.php ; composer.json 
+
+Criado e adicionado as informações nos arquivois, abrir o terminal e rodar o "composer install "
+
+
+Usando o bootstrap 
+
+Criar dentro da pasta "includes" os arquivos:  header.php e footer.php;
+
+Incluir estes arquivos dentro do index.php;
+Criar os botões para ir do index para a listagem , da listagem  para o formulario (Novo);
+
+Criar o formulario;
+Dica: Sempre deixar o Textareatudo na mesma linha, para não ser salvo quebra de linha dentro do banco de dados , sem querer;
+
+Debug
+
+	echo '<pre>;
+	print_r();
+	echo '</pre>';
+	exit;
+
+
+Criar o debug automatico no php.json do vscode;
+
+validação do POST, isset pegando mais de um post dentro :
+
+	if( isset($_POST['Titulo'], $_POST['Descricao'], $_POST['ativo'])){
+    		die('Cadastrar');
+	}
+
+ENTIDADE
+Lembrar que tudo que vai virar tabelas, model, controller, view são chamados de entidades;
+
+
+Criar as classes para trabalhar com as Entidades;
+
+Dentro da pasta 'app' criar a pasta Entity ( entidade ), dentro da pasta entity, criar a classe Vaga.php ;
+Neste arquivo Vaga.php ,teremos a Class Vaga, onde será trabalhado com as informações que serão enviadas para o banco, e as informações que voltaram do banco.
+
+
+Apresentação com o deb do obrjeto $obVaga:
+
+	App\Entity\Vaga Object
+	(
+    		[id] => 
+    		[titulo] => editor de video
+    		[descricao] => editor para os videos do canal wdev
+    		[ativo] => S
+    		[data] => 
+	)
+
+
+
+Criar a classe para gerenciar a conversa com o banco de dados; app -> DB ->  Database.php
+Esta classe será responsável por fazer uma ponte entre o nosso aplicativo e o banco de dados ;
+
+Criada a conexao com o banco de dados, volta para a vaga para inserir as informações na tabela ( sem testar a conexao ao banco :(  );
+
+
+No Cadastrar.php , adicionando um debug , podemos encontrar a informação que o sistema conseguiu se conectar:
+
+	App\Db\Database Object
+	(
+    		[table:App\Db\Database:private] => vagas_wdev
+    		[connection:App\Db\Database:private] => PDO Object
+        	(
+        	)
+	)
+
+Trocamos o nome do HOST apenas para verificar se daria erro. O sistema apresentou o seguinte erro: 
+
+	Error: SQLSTATE[HY000] [1045] Access denied for user 'root2'@'localhost' (using password: YES)
+
+Excelente;
+
+
+Dentro do vagas.php,  após a execução do insert, o debug do $this  apresenta o seguinte resultado:
+
+	App\Entity\Vaga Object
+	(
+    		[id] => 1
+    		[titulo] => editor de video
+    		[descricao] => editor para os videos do canal wdev
+    		[ativo] => S
+    		[data] => 2023-08-01 03:08:24
+	)
+
+Informando que as informações foram inseridas na tabela do banco de dados; 
+
+
+No cadastrar.php, iremos receber a resposta do que foi trabalho. 
+Encaminharemos a resposta com Sucesso para o index.php 
+
+
+Vamos adicionar a Listagem, pois agora ja tem o que ser apresentado ; 
+
+No index teremos a busca das vagas no banco de dados 
+Vagas chamando o metodo getVagas;
+
+Na classe Vagas, iremos criar o Metodo getVagas;
+
+
+
+Con
+
+59 minutos de video
+
+Mas esta na hora de doirmir 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
