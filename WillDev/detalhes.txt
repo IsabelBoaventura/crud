@@ -142,6 +142,12 @@ Se tem id, buscar a vaga que tenha este id, usando o objeto Vaga já selecionado
 
 Dentro do Vaga.php, iremos criar a definir a função getVaga();
 
+validar se a vaga existe; 
+
+definir o titulo para editar vaga e para cadastrar vaga ;
+
+No formulario adicionar os valores dos inputs 
+
 
 
 

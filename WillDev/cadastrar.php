@@ -4,6 +4,9 @@
 
 require __DIR__.'/vendor/autoload.php';
 
+//definicao do titulo 
+define('TITLE', 'Cadastrar Vaga');
+
 use \App\Entity\Vaga;
 
 //VALIDACAO DO post
