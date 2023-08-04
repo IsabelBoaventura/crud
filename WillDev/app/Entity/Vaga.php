@@ -74,6 +74,14 @@ class Vaga{
 
         return  ( new Database('vagas_wdev'))->select( $where, $order, $limit )->fetchAll(PDO::FETCH_CLASS, self::class );
     }
+
+    /**Metodo responsável pela busca de uma unica vaga */
+    public static function getVaga( $id){
+        return  ( new Database('vagas_wdev'))->select( 'id = '. $id)->fetchObject(self::class);
+
+        //fetchObject -> traz apenas uma posição do banco de dados;
+
+    }
 }
 
 ?>

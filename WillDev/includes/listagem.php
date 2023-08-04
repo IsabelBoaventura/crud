@@ -1,6 +1,28 @@
+<?php 
+
+    $resultados = '';
+    foreach( $vagas as $vaga ){
+        $resultados.= '<tr>'. 
+                        '<td>'.$vaga->id.'</td>'.
+                        '<td>'.$vaga->titulo.'</td>'.
+                        '<td>'.$vaga->descricao.'</td>'.
+                        '<td>'.($vaga->ativo=="S"? "Ativo":"Inativo").'</td>'.
+                        '<td>'.date("d/m/Y à\s H:i:s",  strtotime( $vaga->data) ).'</td>'.
+                        '<td>
+                            <a href="editar.php?id='.$vaga->id.'">
+                                <button type="submit" class="btn btn-primary"> Editar</button>
+                            </a><a href="excluir.php?id='.$vaga->id.'">
+                                <button type="submit" class="btn btn-danger"> Excluir</button>
+                            </a>
+                        </td>'.
+                    '</tr>';
+
+    }
+
+?>
+
 <main>
-    <section>
-       
+    <section>       
         <a href="cadastrar.php">
             <button class="btn btn-success" >Nova Vaga</button>
         </a>
@@ -20,16 +42,8 @@
                 
             </thead>
             <tbody>
-                <tr>
-                    <td>
-
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <?php echo $resultados; ?> 
+               
             </tbody>
         </table>
     </section>

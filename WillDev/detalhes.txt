@@ -131,18 +131,16 @@ Vagas chamando o metodo getVagas;
 Na classe Vagas, iremos criar o Metodo getVagas;
 
 
+Realizado o foreach das vagas, na paginas listagem;
+Realizado o chamado para o editar e excluir;
 
-Con
+Cadastrar será duplicado para ser o editar;
 
-59 minutos de video
+No editar, obrigar a ter o ID. Se estiver vazio ou se não for numerico, voltará para o index.php;
 
-Mas esta na hora de doirmir 
+Se tem id, buscar a vaga que tenha este id, usando o objeto Vaga já selecionado, e a função getVaga(){} que ainda não foi definida. 
 
-
-
-
-
-
+Dentro do Vaga.php, iremos criar a definir a função getVaga();
 
 
 
