@@ -1,4 +1,18 @@
-<?php 
+<?php
+
+    $mensagem = '';
+
+    //se o status estiver definido, ir para o switch
+    if( isset($_GET['status'])){
+        switch ($_GET['status']){
+            case 'success':
+                $mensagem = '<div class="alert alert-success">Ação Executada com sucesso</div>';
+                break;
+            case 'error':
+                $mensagem = '<div class="alert alert-danger">Erro na execução da Ação </div>';
+                break;
+        }
+    }
 
     $resultados = '';
     foreach( $vagas as $vaga ){
@@ -19,9 +33,16 @@
 
     }
 
+    //Descobre se tem ou nao informações na variavel resultado, tendo as informações imprime as ifnoramções, não havendo , imprime a mensagem de sem ifnormações 
+    $resultados = strlen($resultados)? $resultados :'<tr>
+        <td colspan="6" class="text-center" >Nenhuma Vaga Encontrada
+        </td>
+    </tr>';
+
 ?>
 
 <main>
+    <?=$mensagem?>
     <section>       
         <a href="cadastrar.php">
             <button class="btn btn-success" >Nova Vaga</button>

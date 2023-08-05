@@ -82,6 +82,28 @@ class Vaga{
         //fetchObject -> traz apenas uma posição do banco de dados;
 
     }
+
+
+    /**Metodo responsável por atualizar a vaga no banco 
+     * @return boolean 
+     */
+    public function  atualizar(){
+        return  ( new Database('vagas_wdev'))->update('id = '. $this->id, [
+            'titulo'    => $this->titulo,
+            'descricao' => $this->descricao,
+            'ativo'     => $this->ativo
+        ] );
+
+    }
+
+    /**Metodo responsavel pela exclusao da vaga do banco 
+     * @return boolean 
+     * encaminha para o metodo delete dentro do database
+     */
+    public function excluir(){
+        return  ( new Database('vagas_wdev'))->delete( 'id = '. $this->id);
+
+    }
 }
 
 ?>

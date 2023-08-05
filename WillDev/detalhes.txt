@@ -151,6 +151,57 @@ No formulario adicionar os valores dos inputs
 
 
 
+Refazendo a partir do Editar
+
+duplique o cadastrar e transforme ele em editar.php 
+
+
+No exemplo dele a chamada da class vaga esta dentro do confirmação do id, no cadastrar.php  e com ele nao houve erro; 
+No meu caso sim, apareceu erros do php.
+Para resolver,  eu chamei class vaga antes do conferencia do post ; 
+
+
+Agora vamos criar o método para atualizar o dado no banco
+
+Dentro do editar,  no lugar onde estava a chamada do metodo cadastrar, será a chamada do metodo atualizar ();
+
+Criar na classe vaga, o método atualizar();
+Atualizar() -> chama o método 'update' do Database;
+
+Dentro do Database criar o metodo update();
+
+query sendo criada automaticamente conforme os campos: 
+	UPDATE vagas_wdev SET titulo=?, descricao=?, ativo=?  WHERE id = 5;
+
+
+
+Agora excluir a vaga;
+Duplicar o editar para fazer a exclusao da vaga;
+
+No lugar de formulario iremos buscar o 'confirmar-exclusao.php';
+confirmar é a copia do formulario;
+
+
+Criar o metodo excluir dentro de Vaga ;
+
+Criar o metodo delete no Database;
+
+Funcionando
+
+agora tratar os status;
+
+No arquivo listagem.php queiremos tratar qual mensagem ira aparecer ; 
+
+
+Finalizado!
+
+
+
+
+
+
+
+
 
 
 

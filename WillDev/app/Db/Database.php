@@ -118,7 +118,60 @@ class Database{
         return $this->execute($query);
 
     }
-   
+  
+    /**Metodo responsável por atualizar valores no banco de dados 
+     * @IsabelBoaventura
+     * @param string $where
+     * @param array $values 
+     * @return  boolean */    
+    public function update( $where , $values ){
+
+
+        //Dados da  query
+        $fields = array_keys( $values);
+        /** variavel campo, recebe todas as chaves da array */
+        $binds = array_pad( [], count($fields), '?');
+
+
+        //MONTAR A QUERY
+        $query ='UPDATE '. $this->table . ' SET ';
+        $campos = implode('=?, ', $fields );
+        $query.=$campos.'=? '; 
+        //para o  ultimo campo é necessário adicionar a atribuição manualmente
+        $query .='WHERE '. $where ;
+
+        // echo '<pre>';
+        // print_r( $where );
+        // echo '<br><br>';
+        // print_r( $values );
+        // echo '<br><br>';
+        // print_r( $fields );
+        // echo '<br><br>';
+        // print_r( $query );
+        // echo '</pre>';
+        // exit;
+
+        //EXECUTAR A QUERY
+        $this->execute($query, array_values($values));
+
+
+        return true;
+
+    }
+
+    /**Metodo responsavel pela exclusao no banco de dados
+     * @param string $where 
+     * @return boolean
+      */
+    public function delete( $where ){
+
+        //Monta a query de exclusao 
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+
+        //Executa a Query
+        $this->execute( $query );
+        return true;
+    }
 }
 
 
